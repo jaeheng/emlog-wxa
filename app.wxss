@@ -3,8 +3,111 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
   box-sizing: border-box;
 } 
+a {
+  color: #FF4949;
+}
+
+button.red-btn {
+  background-color: #FF4949;
+  color: #fff;
+}
+
+button.red-btn:hover,
+button.read-btn.button-hover {
+  background-color: #ee4949;
+  color: #fff;
+}
+/*列表*/
+.zh-list {
+  border-top: 1px solid #f3f3f3;
+}
+.zh-list-item {
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #f3f3f3;
+}
+.zh-list-item .icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+  float: left;
+  margin-top: 3px;
+}
+.zh-list-item .icon-right {
+  float: right;
+  margin-top: 6px;
+}
+
+.zh-list-item.list-item-link:active {
+  background-color: #f3f3f3;
+}
+
+/*icon*/
+.icon-right {
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  transform: rotate(45deg);
+}
+
+.page-title {
+  padding: 20px 20px 10px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.article-item {
+  background-color: #f3f3f3;
+  padding: 20rpx;
+  margin: 10px;
+}
+.article-item .info {
+  overflow: hidden;
+}
+.article-item .username,
+.article-item .sort {
+  float: left;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top:  5px;
+  margin-right: 10px;
+}
+.article-item .time {
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+  color: #aaa;
+  float: right;
+}
+.article-item .desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+.article-item .title {
+  display: block;
+  font-size: 34rpx;
+  margin-bottom: 10px;
+  padding: 10px 0 0;
+  color:#666;
+}
+.article-item.article-info {
+  background-color: transparent;
+}
+.article-item .article-item {
+  border-left: 1px solid #666;
+  background-color: #eee;
+  margin: 10px 0;
+}
+.read-more {
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 14px;
+  color: #aaa;
+}

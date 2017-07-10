@@ -1,0 +1,25 @@
+<!--comment.wxml-->
+<view class="container">
+<text class="page-title">给我留言</text>
+<scroll-view>
+  <view class="article-item" wx:for="item in 10">
+    <view class="info">
+      <text class="username">jaeheng</text>
+      <text class="time">2017-07-08 16:32:02</text>
+    </view>
+    <text class="desc">
+    emlog博客系统的官网在2017年6月底突然关闭了，疑似被攻击。具体还会不会恢复访问不得而知，没有官网和社区支持，再优秀的开源软件也会慢慢没落。再考虑到emlog已2-3年没有过更新，于是毅然决定将博客转为全球最为流行的wordpress，以下是迁移的过程。
+    </text>
+    <view class="article-item">
+      <view class="info">
+        <text class="username">作者回复</text>
+        <text class="time">2017-07-08 16:32:02</text>
+      </view>
+      <text class="desc">
+      emlog博客系统的官网在2017年6月底突然关闭了，疑似被攻击。
+      </text>
+    </view>
+  </view>
+</scroll-view>
+<view class="add-comment" bindtap="addComment" animation="{{animationData}}">+</view>
+</view>

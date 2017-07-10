@@ -1,26 +1,18 @@
 //index.js
-//获取应用实例
-var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    desc: '记录web开发工作中遇到的问题及解决办法',
+    userInfo: {
+      nickName: "子恒博客",
+      avatarUrl: "/static/images/logo.png"
+    }
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../blog/blog'
     })
   },
   onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-    })
   }
 })

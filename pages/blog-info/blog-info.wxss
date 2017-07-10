@@ -1,0 +1,21 @@
+/* blog-info.wxss */
+.p {
+  margin-top: 15px;
+}
+
+.comment-btn {
+  text-align: right;
+  padding: 10px 0;
+  font-size: 12px;
+  color: #fff;
+}
+.comment-btn text {
+  background-color: #FF4949;
+  display: inline-block;
+  padding: 20rpx 40rpx;
+  box-shadow: 0 4px 5px #ccc;
+}
+.comment-btn text:active {
+  box-shadow: 0 1px 5px #ccc;
+  background-color: #ee4949;
+}

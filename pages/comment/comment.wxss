@@ -1,0 +1,16 @@
+/* comment.wxss */
+.add-comment {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: #FF4949;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 110rpx;
+  color: #fff;
+  font-size: 80rpx;
+  box-shadow: 0 5px 10px #bbb;
+  font-weight: 200;
+}

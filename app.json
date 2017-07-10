@@ -1,12 +1,45 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/blog-info/blog-info",
+    "pages/blog/blog",
+    "pages/ucenter/ucenter",
+    "pages/add-comment/add-comment",
+    "pages/comment/comment",
+    "pages/my-comment/my-comment"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF4949",
+    "navigationBarTitleText": "子恒博客",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#FF4949",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "博客",
+        "iconPath": "static/images/blog.png",
+        "selectedIconPath": "static/images/blog-active.png"
+      },
+      {
+        "pagePath": "pages/comment/comment",
+        "text": "留言",
+        "iconPath": "static/images/comment.png",
+        "selectedIconPath": "static/images/comment-active.png"
+      },
+      {
+        "pagePath": "pages/ucenter/ucenter",
+        "text": "我",
+        "iconPath": "static/images/me.png",
+        "selectedIconPath": "static/images/me-active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 100000
+  },
+  "debug": true
 }

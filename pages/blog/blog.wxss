@@ -1,0 +1,8 @@
+/* blog.wxss */
+.article-item {
+  box-shadow: 0 5px 10px #ccc;
+  margin: 40rpx;
+}
+.article-item:active {
+  background-color: #eee;
+}

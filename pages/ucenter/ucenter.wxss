@@ -1,0 +1,20 @@
+/* ucenter.wxss */
+.userinfo {
+  padding: 30rpx;
+  background-color: #f3f3f3;
+}
+.userinfo .avatar {
+  float: left;
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 15px;
+  background-color: #fafafa;
+}
+.userinfo .nickname,
+.userinfo .gender {
+  font-size: 14px;
+}
+.userinfo .gender {
+  display: block;
+  margin-top: 10px;
+}
