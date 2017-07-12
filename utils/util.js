@@ -45,12 +45,13 @@ function get (url, params, success, error) {
         setTimeout(function () { unloading() }, 300)
       } else {
         console.log(data.msg)
+        error(data.msg)
         unloading()
       }
     },
     fail: function() {
       unloading()
-      error()
+      error('请求错误!')
     }
   })
 }
@@ -58,11 +59,27 @@ function get (url, params, success, error) {
 /**
  * 获取某分类下的文章
  */
-function getArticle (term_id, page, success, error) {
-  get(api.getArticle, { term_id, page }, success, error)
+function getArticle(sort, page, success, error) {
+  get(api.getArticle, { sort, page }, success, error)
+}
+
+/**
+ * 获取文章详情
+ */
+function getArticleInfo(gid, success, error) {
+  get(api.getArticleInfo, { gid }, success, error)
+}
+
+/**
+ * 获取某文章下的评论
+ */
+function getArticleComments(gid, page, success, error) {
+  get(api.getArticleComments, { gid, page }, success, error)
 }
 
 module.exports = {
-  formatTime: formatTime,
-  getArticle: getArticle
+  formatTime,
+  getArticle,
+  getArticleInfo,
+  getArticleComments
 }

@@ -111,3 +111,10 @@ button.read-btn.button-hover {
   font-size: 14px;
   color: #aaa;
 }
+.error {
+  background-color:#ff0;
+  text-align:center;
+  padding:10px 0;
+  color:#a00;
+  font-size:14px;
+}

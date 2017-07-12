@@ -2,14 +2,14 @@
 <view class="container">
 <text class="page-title">最新文章</text>
 <scroll-view bindscrolltolower="getData">
-  <view class="article-item" wx:for="{{ data }}"  data-blogId="{{ item.post_id }}" wx:key="{{ item.post_id }}" bindtap="showblogInfo">
-      <text class="title">{{ item.post_title }}</text>
+  <view class="article-item" wx:for="{{ data }}"  data-gid="{{ item.gid }}" wx:key="{{ item.gid }}" bindtap="showblogInfo">
+      <text class="title">{{ item.title }}</text>
       <view class="info">
-        <text class="sort">{{ term_name }}</text>
-        <text class="time">{{ item.post_date }}</text>
+        <text class="sort">{{ item.sortname }}</text>
+        <text class="time">{{ item.date }}</text>
       </view>
       <text class="desc">
-      {{ item.post_excerpt }}
+      {{ item.excerpt }}
       </text>
   </view>
 </scroll-view>

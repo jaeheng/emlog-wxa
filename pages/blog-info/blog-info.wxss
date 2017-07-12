@@ -1,6 +1,9 @@
 /* blog-info.wxss */
 .p {
   margin-top: 15px;
+  width: 100%;
+  overflow: hidden;
+  word-break: break-all;
 }
 
 .comment-btn {
@@ -18,4 +21,10 @@
 .comment-btn text:active {
   box-shadow: 0 1px 5px #ccc;
   background-color: #ee4949;
+}
+.view {
+  color: #666;
+  font-size: 12px;
+  margin-top:9px;
+  float:left;
 }

@@ -1,43 +1,36 @@
 <!--blog-info.wxml-->
 <view class="container">
-<text class="page-title">emlog博客系统的官网在2017年6月底突然关闭了</text>
+<view class="error" wx:if="{{ error.length > 0 }}">{{ error }}</view>
+<text class="page-title">{{ data.title }}</text>
   <view class="article-item article-info">
       <view class="info">
-        <text class="sort">web开发</text>
-        <text class="time">2017-07-08 16:32:02</text>
+        <text class="sort">{{ data.sortname }}</text>
+        <text class="view">(浏览:{{ data.views }})</text>
+        <text class="time">{{ data.date }}</text>
       </view>
       <view class="desc">
         <view class="p">
-        emlog博客系统的官网在2017年6月底突然关闭了，疑似被攻击。具体还会不会恢复访问不得而知，没有官网和社区支持，再优秀的开源软件也会慢慢没落。再考虑到emlog已2-3年没有过更新，于是毅然决定将博客转为全球最为流行的wordpress，以下是迁移的过程。
+        {{ data.content }}
         </view>
       </view>
       <view class="comment-btn">
-         <text bindtap="replyPost" data-blogId="1">回复</text>
+         <text bindtap="replyPost" data-blogId="1">评论</text>
       </view>
   </view>
 
   <text class="page-title" style="border-top: 1px solid #f3f3f3;">最新评论</text>
-  <scroll-view class="comment">
-    <view class="article-item" wx:for="{{ [1, 2, 3] }}">
+  <scroll-view class="comment" bindscrolltolower="getComments">
+    <view class="article-item" wx:for="{{ comments }}">
       <view class="info">
-        <text class="username">jaeheng{{item}}</text>
-        <text class="time">2017-07-08 16:32:02</text>
+        <text class="username">{{ item.poster }}</text>
+        <text class="time">{{ item.date }}</text>
       </view>
-      <text class="desc">
-      emlog博客系统的官网在2017年6月底突然关闭了，疑似被攻击。具体还会不会恢复访问不得而知，没有官网和社区支持，再优秀的开源软件也会慢慢没落。再考虑到emlog已2-3年没有过更新，于是毅然决定将博客转为全球最为流行的wordpress，以下是迁移的过程。
-      </text>
-      <view class="article-item" wx:for="{{[1, 2]}}">
-        <view class="info">
-          <text class="username">jaeheng{{item}}</text>
-          <text class="time">2017-07-08 16:32:02</text>
-        </view>
-        <text class="desc">
-        emlog博客系统的官网在2017年6月底突然关闭了，疑似被攻击。
-        </text>
+      <view class="desc">
+        {{ item.comment }}
       </view>
     </view>
     <view class="read-more">
-        无更多数据
+        {{ isend ? '无更多数据' : '加载中...' }}
     </view>
   </scroll-view>
 </view>
