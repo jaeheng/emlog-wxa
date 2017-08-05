@@ -15,16 +15,11 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    this.getComments()
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getComments(1)
+
     var animation = wx.createAnimation({
       duration: 1000,
       timingFunction: 'ease',
@@ -50,7 +45,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getComments(0)
+    this.getComments(1)
   },
 
   onReachBottom: function () {
@@ -63,18 +58,18 @@ Page({
     })
   },
 
-  getComments: function (page) {
+  getComments: function (fromStart) {
     let isEnd = this.data.isend
-    if (isEnd && page !== 0) return false
+    if (isEnd && !fromStart) return false
     var gid = this.data.gid
-    page = page || this.data.page
+    var page = fromStart ? 1 : this.data.page + 1
     var that = this
     var oldData = this.data.comments
 
-    util.getArticleComments(gid, page + 1, function (success) {
+    util.getArticleComments(gid, page, function (success) {
       that.setData({
-        page: page + 1,
-        comments: oldData.concat(success.data),
+        page: page,
+        comments: fromStart ? success.data : oldData.concat(success.data),
         total: success.total,
         isend: success.data.length < 10
       })

@@ -36,21 +36,17 @@ Page({
     })
   },
 
-  getData: function (page) {
+  getData: function (fromStart) {
     let isEnd = this.data.isend
-    if (isEnd && page !== 0) return false
+    if (isEnd && !fromStart) return false
     let sort = this.data.sort
-    page = page || this.data.page
+    var page = fromStart ? 1 : this.data.page + 1
     let that = this
     let oldData = this.data.data
-    util.getArticle(sort, page + 1, function (data) {
-      var dataList = data.data.map(function (item) {
-        item['excerpt'] = item['excerpt'] ? item['excerpt'] : item['content'].substring(0, 50)
-        return item
-      })
+    util.getArticle(sort, page, function (data) {
       that.setData({
-        page: page + 1,
-        data: oldData.concat(data.data),
+        page: page,
+        data: fromStart ? data.data : oldData.concat(data.data),
         total: data.total,
         isend: data.data.length < 10
       })
@@ -63,6 +59,6 @@ Page({
   },
 
   onPullDownRefresh: function () {
-    this.getData(0);
+    this.getData(1);
   }
 })

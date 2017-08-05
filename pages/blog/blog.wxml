@@ -1,7 +1,7 @@
 <!--blog.wxml-->
 <view class="container">
 <text class="page-title">最新文章</text>
-<scroll-view bindscrolltolower="getData">
+<view onReachBottom="getData">
   <view class="article-item" wx:for="{{ data }}"  data-gid="{{ item.gid }}" wx:key="{{ item.gid }}" bindtap="showblogInfo">
       <text class="title">{{ item.title }}</text>
       <view class="info">
@@ -12,7 +12,7 @@
       {{ item.excerpt }}
       </text>
   </view>
-</scroll-view>
+</view>
 <view class="read-more">
   {{ isend ? '无更多数据' : '加载中...' }}
 </view>

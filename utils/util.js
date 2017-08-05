@@ -30,28 +30,33 @@ function unloading () {
 }
 
 /**
- * GET操作
+ * http操作
  */
-function get (url, params, success, error) {
-  loading()
+function http (url, params, type, success, error, needLoading) {
+  if (typeof needLoading !== 'boolean' || needLoading) {
+    loading()
+  }
   wx.request({
     url: url,
     data: params,
-    method: 'GET',
+    method: type,
+    header: {
+      'content-type': 'application/x-www-form-urlencoded'
+    },
     success: function (resp) {
       var data = resp.data
       if (data.state) {
-        success(data.data)
+        typeof success == 'function' && success(data.data)
         setTimeout(function () { unloading() }, 300)
       } else {
         console.log(data.msg)
-        error(data.msg)
+        typeof error == 'function' && error(data.msg)
         unloading()
       }
     },
     fail: function() {
       unloading()
-      error('请求错误!')
+      typeof error == 'function' && error('请求错误!')
     }
   })
 }
@@ -60,26 +65,72 @@ function get (url, params, success, error) {
  * 获取某分类下的文章
  */
 function getArticle(sort, page, success, error) {
-  get(api.getArticle, { sort, page }, success, error)
+  http(api.getArticle, { sort, page }, 'GET', success, error)
 }
 
 /**
  * 获取文章详情
  */
 function getArticleInfo(gid, success, error) {
-  get(api.getArticleInfo, { gid }, success, error)
+  http(api.getArticleInfo, { gid }, 'GET', success, error)
 }
 
 /**
  * 获取某文章下的评论
  */
 function getArticleComments(gid, page, success, error) {
-  get(api.getArticleComments, { gid, page }, success, error)
+  http(api.getArticleComments, { gid, page }, 'GET', success, error, false)
+}
+
+function setLS (key, value) {
+  wx.setStorage({
+    key: key,
+    data: value
+  })
+}
+
+function getLS (key) {
+  return wx.getStorageSync(key)
+}
+
+function login (callback, error) {
+  wx.login({
+    success: function (res) {
+      if (res.code) {
+        //发起网络请求
+        http(api.login, { code: res.code }, 'GET', function (res) {
+          var session3rd = res.session3rd
+          setLS('session3rd', session3rd)
+          typeof callback == 'function' && callback()
+        }, error)
+      } else {
+        console.log('获取用户登录态失败！' + res.errMsg)
+        unloading()
+      }
+    }
+  });
+}
+
+/**
+ * 添加评论
+ */
+function addComment (data, callback, error) {
+  var session3rd = getLS('session3rd');
+  data.session3rd = session3rd
+  http(api.addComment, data, 'POST', callback, error)
+}
+
+function getCommentsByOpenid (page, callback, error) {
+  var session3rd = getLS('session3rd');
+  http(api.getCommentsByOpenid, { page, session3rd }, 'GET', callback, error)
 }
 
 module.exports = {
   formatTime,
   getArticle,
   getArticleInfo,
-  getArticleComments
+  getArticleComments,
+  login,
+  addComment,
+  getCommentsByOpenid
 }

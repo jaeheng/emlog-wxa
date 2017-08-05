@@ -9,7 +9,7 @@
     "pages/my-comment/my-comment"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#FF4949",
     "navigationBarTitleText": "子恒博客",
     "navigationBarTextStyle": "white"

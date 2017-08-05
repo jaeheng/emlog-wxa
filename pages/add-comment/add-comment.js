@@ -1,66 +1,64 @@
 // add-comment.js
+import util from '../../utils/util.js'
+var app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    gid: 0,
+    comment: '',
+    disabled: true,
+    userInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      gid: options.gid
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-  
+    var that = this
+    app.getUserInfo(function (userInfo) {
+      console.log(userInfo)
+      that.setData({
+        userInfo: userInfo
+      })
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  changeHandle: function (e) {
+    console.log('input comment')
+    var gid = this.data.gid
+    var comment = e.detail.value
+    console.log('gid: ' + gid)
+    console.log('comment: ' + comment)
+
+    this.setData({
+      comment: comment,
+      disabled: gid === 0 || comment.length < 1
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
+  addComment: function () {
+    var gid = this.data.gid
+    var comment = this.data.comment
+    var poster = this.data.userInfo.nickName
+    var avatar = this.data.userInfo.avatarUrl
+    var fromUrl = this.data.fromUrl
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    if (gid === 0 || comment.length < 1) {
+      return false
+    } else {
+      util.addComment({ gid, comment, poster, avatar }, function (res) {
+        wx.navigateBack()
+      })
+    }
   }
 })

@@ -1,5 +1,5 @@
 <!--add-comment.wxml-->
 <view class="container">
-  <textarea bindblur="bindTextAreaBlur" auto-height auto-focus placeholder="请文明留言" class="comment-box" />
-  <button type="primary" class="red-btn"> 提交评论 </button>
+  <textarea auto-height auto-focus placeholder="请文明留言" class="comment-box" value="{{ comment }}" bindinput="changeHandle"/>
+  <button class="red-btn" bindtap="addComment" disabled="{{ disabled }}"> 提交评论 </button>
 </view>

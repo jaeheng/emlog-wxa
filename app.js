@@ -1,10 +1,11 @@
 //app.js
+import util from './utils/util.js'
 App({
   onLaunch: function() {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    var that = this
+    util.login(function () {
+      that.getUserInfo()
+    })
   },
 
   getUserInfo: function(cb) {
@@ -16,6 +17,7 @@ App({
       wx.getUserInfo({
         withCredentials: false,
         success: function(res) {
+          console.log(res)
           that.globalData.userInfo = res.userInfo
           typeof cb == "function" && cb(that.globalData.userInfo)
         }

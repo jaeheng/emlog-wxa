@@ -15,10 +15,16 @@ button.red-btn {
   color: #fff;
 }
 
-button.red-btn:hover,
-button.read-btn.button-hover {
+button.red-btn:active,
+button.red-btn.button-hover {
   background-color: #ee4949;
   color: #fff;
+}
+
+button[disabled].red-btn,
+button[disabled].red-btn:active {
+  background-color: #eee;
+  color: #aaa;
 }
 /*列表*/
 .zh-list {
@@ -89,6 +95,7 @@ button.read-btn.button-hover {
   font-size: 14px;
   line-height: 1.5;
   color: #666;
+  padding: 10px 0;
 }
 .article-item .title {
   display: block;
@@ -117,4 +124,12 @@ button.read-btn.button-hover {
   padding:10px 0;
   color:#a00;
   font-size:14px;
+}
+
+.article-comment-item {
+  background-color:#f3f3f3;
+  padding:20rpx;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:8rpx 8rpx 1px #ccc;
 }

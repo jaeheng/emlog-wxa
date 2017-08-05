@@ -1,4 +1,6 @@
 <!--blog-info.wxml-->
+<import src="../../utils/wxParse/wxParse.wxml"/>
+
 <view class="container">
 <view class="error" wx:if="{{ error.length > 0 }}">{{ error }}</view>
 <text class="page-title">{{ data.title }}</text>
@@ -9,18 +11,16 @@
         <text class="time">{{ data.date }}</text>
       </view>
       <view class="desc">
-        <view class="p">
-        {{ data.content }}
-        </view>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
       </view>
       <view class="comment-btn">
-         <text bindtap="replyPost" data-blogId="1">评论</text>
+         <text bindtap="replyPost">评论</text>
       </view>
   </view>
 
   <text class="page-title" style="border-top: 1px solid #f3f3f3;">最新评论</text>
   <scroll-view class="comment" bindscrolltolower="getComments">
-    <view class="article-item" wx:for="{{ comments }}">
+    <view class="article-item article-comment-item" wx:for="{{ comments }}">
       <view class="info">
         <text class="username">{{ item.poster }}</text>
         <text class="time">{{ item.date }}</text>

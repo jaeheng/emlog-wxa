@@ -1,8 +1,8 @@
 <!--comment.wxml-->
 <view class="container">
 <text class="page-title">给我留言</text>
-<scroll-view>
-  <view class="article-item" wx:for="{{ comments }}">
+<view>
+  <view class="article-item article-comment-item" wx:for="{{ comments }}" wx:key="{{ item.cid }}">
     <view class="info">
       <text class="username">{{ item.poster }}</text>
       <text class="time">{{ item.date }}</text>
@@ -14,6 +14,6 @@
   <view class="read-more">
     {{ isend ? '无更多数据' : '加载中...' }}
   </view>
-</scroll-view>
+</view>
 <view class="add-comment" bindtap="addComment" animation="{{animationData}}">+</view>
 </view>

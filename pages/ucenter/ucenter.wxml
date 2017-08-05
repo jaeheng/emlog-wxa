@@ -12,10 +12,9 @@
         <text>我的评论</text>
         <view class="icon-right"></view>
       </view>
-      <view class="zh-list-item list-item-link">
-        <image src="/static/images/me.png" class="icon"></image>
-        <text>关于我们</text>
-        <view class="icon-right"></view>
-      </view>
+  </view>
+
+  <view class="copyright">
+    I'am Jaeheng
   </view>
 </view>

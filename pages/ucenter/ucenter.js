@@ -1,5 +1,7 @@
 // ucenter.js
-var app = getApp();
+import util from '../../utils/util.js'
+var app = getApp()
+
 Page({
 
   /**

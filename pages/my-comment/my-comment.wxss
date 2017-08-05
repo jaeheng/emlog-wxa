@@ -12,3 +12,9 @@
 .from text:active {
   color: #ff3434;
 }
+
+.notice {
+  text-align:center;
+  padding:20rpx 0;
+  color:#aaa;
+}

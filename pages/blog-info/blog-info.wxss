@@ -1,4 +1,6 @@
 /* blog-info.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
+
 .p {
   margin-top: 15px;
   width: 100%;
