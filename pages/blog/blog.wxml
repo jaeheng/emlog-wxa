@@ -1,16 +1,27 @@
 <!--blog.wxml-->
-<view class="container">
-<text class="page-title">最新文章</text>
+<view class="container blog-view">
+<image src="{{imgUrl}}" class="banner"/>
+
 <view onReachBottom="getData">
   <view class="article-item" wx:for="{{ data }}"  data-gid="{{ item.gid }}" wx:key="{{ item.gid }}" bindtap="showblogInfo">
       <text class="title">{{ item.title }}</text>
+      <text class="desc" wx:if="{{ item.img.length === 0 }}">
+      {{ item.excerpt }}
+      </text>
+      <view class="desc-with-pic" wx:if="{{ item.img.length === 1 }}">
+        {{ item.excerpt }}
+        <image src="{{ item.img[0] }}" class="desc-img"></image>
+      </view>
+      <view class="desc-with-pics" wx:if="{{ item.img.length > 1 }}">
+        {{ item.excerpt }}
+        <view class="desc-pics">
+          <image src="{{ img }}" mode="widthFix" wx:for-item="img" wx:for-index="key" wx:for="{{ item.img }}" wx:key="{{ img }}" class="desc-img"></image>
+        </view>
+      </view>
       <view class="info">
         <text class="sort">{{ item.sortname }}</text>
         <text class="time">{{ item.date }}</text>
       </view>
-      <text class="desc">
-      {{ item.excerpt }}
-      </text>
   </view>
 </view>
 <view class="read-more">

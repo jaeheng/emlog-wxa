@@ -12,7 +12,8 @@ Page({
     total: 0,
     loading: true,
     isend: false,
-    per_page: 10
+    per_page: 10,
+    imgUrl: 'https://api.zhangziheng.com/static/images/banner2.png'
   },
 
   /**

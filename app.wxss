@@ -63,46 +63,71 @@ button[disabled].red-btn:active {
 }
 
 .page-title {
-  padding: 20px 20px 10px;
-  font-size: 18px;
+  padding: 20rpx 50rpx;
+  font-size: 16px;
   line-height: 1.5;
+  border-bottom: 1rpx solid #fafafa;
 }
 
 .article-item {
-  background-color: #f3f3f3;
-  padding: 20rpx;
-  margin: 10px;
+  padding: 30rpx 20rpx;
+  margin: 0 30rpx;
+  border-bottom: 1rpx solid #d3d3d3;
 }
 .article-item .info {
   overflow: hidden;
 }
 .article-item .username,
-.article-item .sort {
-  float: left;
-  font-size: 14px;
+.article-item .sort,
+.article-item .time {
+  font-size: 12px;
   line-height: 20px;
   margin-top:  5px;
+  display: block;
+  color: #aaa;
+}
+.article-item .username,
+.article-item .sort {
+  float: left;
   margin-right: 10px;
 }
 .article-item .time {
-  font-size: 12px;
-  display: block;
-  margin-top: 10px;
-  color: #aaa;
   float: right;
 }
-.article-item .desc {
+.article-item .desc,
+.article-item .desc-with-pic,
+.article-item .desc-with-pics {
   font-size: 14px;
   line-height: 1.5;
   color: #666;
   padding: 10px 0;
 }
+
+.article-item .desc-with-pic {
+  position: relative;
+  padding-right: 300rpx;
+}
+.article-item .desc-with-pic .desc-img {
+  width: 280rpx;
+  height: 200rpx;
+  position: absolute;
+  right: -10rpx;
+  top: 10px;
+}
+.article-item .desc-with-pics .desc-pics {
+  display: flex;
+}
+.article-item .desc-with-pics .desc-img {
+  flex: 1;
+  padding: 20rpx 10rpx;
+}
+
 .article-item .title {
   display: block;
   font-size: 34rpx;
   margin-bottom: 10px;
   padding: 10px 0 0;
-  color:#666;
+  color:#4b4b4b;
 }
 .article-item.article-info {
   background-color: transparent;

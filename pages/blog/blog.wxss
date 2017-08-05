@@ -1,8 +1,21 @@
 /* blog.wxss */
-.article-item {
-  box-shadow: 0 5px 10px #ccc;
-  margin: 40rpx;
+.blog-view {
+  background-color: #fff;
 }
-.article-item:active {
-  background-color: #eee;
+.slide-image {
+  width: 100%;
+}
+
+.banner {
+  width: 100%;
+  height: 260rpx;
+}
+
+.logo {
+  margin: 0 30rpx;
+  text-align: center;
+  font-size: 24rpx;
+  padding: 10px 0;
+  border-bottom: 1px solid #d3d3d3;
+  position: relative;
 }
