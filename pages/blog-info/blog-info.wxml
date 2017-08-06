@@ -14,7 +14,7 @@
         <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
       </view>
       <view class="comment-btn">
-         <text bindtap="replyPost">评论</text>
+         <view class="add-comment" bindtap="replyPost">+</view>
       </view>
   </view>
 

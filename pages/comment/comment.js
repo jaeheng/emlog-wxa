@@ -11,7 +11,8 @@ Page({
     total: 0,
     page: 0,
     comments: [],
-    isend: false
+    isend: false,
+    imgUrl: 'https://api.zhangziheng.com/static/images/comment.png'
   },
 
   /**

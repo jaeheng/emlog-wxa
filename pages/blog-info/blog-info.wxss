@@ -1,6 +1,9 @@
 /* blog-info.wxss */
 @import "../../utils/wxParse/wxParse.wxss";
-
+.wxParse-pre {
+  white-space: normal;
+  width: 100%;
+}
 .p {
   margin-top: 15px;
   width: 100%;
@@ -29,4 +32,7 @@
   font-size: 12px;
   margin-top:9px;
   float:left;
+}
+.article-info {
+  border-bottom: none;
 }

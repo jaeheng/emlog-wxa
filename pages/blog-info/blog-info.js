@@ -90,5 +90,10 @@ Page({
   onPullDownRefresh: function () {
     this.getArticleInfo()
     this.getComments(1)
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: this.data.data.title
+    }
   }
 })

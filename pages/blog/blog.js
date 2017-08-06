@@ -61,5 +61,10 @@ Page({
 
   onPullDownRefresh: function () {
     this.getData(1);
+  },
+
+  onShareAppMessage: function (res) {
+    return {
+    }
   }
 })

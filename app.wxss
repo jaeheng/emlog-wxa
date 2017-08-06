@@ -7,17 +7,17 @@
   box-sizing: border-box;
 } 
 a {
-  color: #FF4949;
+  color: #8fcdbe;
 }
 
 button.red-btn {
-  background-color: #FF4949;
+  background-color: #8fcdbe;
   color: #fff;
 }
 
 button.red-btn:active,
 button.red-btn.button-hover {
-  background-color: #ee4949;
+  background-color: #aaddd8;
   color: #fff;
 }
 
@@ -63,14 +63,14 @@ button[disabled].red-btn:active {
 }
 
 .page-title {
-  padding: 20rpx 50rpx;
+  padding: 20rpx 30rpx;
   font-size: 16px;
   line-height: 1.5;
   border-bottom: 1rpx solid #fafafa;
 }
 
 .article-item {
-  padding: 30rpx 20rpx;
+  padding: 30rpx 0rpx;
   margin: 0 30rpx;
   border-bottom: 1rpx solid #d3d3d3;
 }
@@ -99,7 +99,7 @@ button[disabled].red-btn:active {
 .article-item .desc-with-pics {
   font-size: 14px;
   line-height: 1.5;
-  color: #666;
+  color: #787878;
   padding: 10px 0;
 }
 
@@ -124,10 +124,10 @@ button[disabled].red-btn:active {
 
 .article-item .title {
   display: block;
-  font-size: 34rpx;
+  font-size: 32rpx;
   margin-bottom: 10px;
-  padding: 10px 0 0;
-  color:#4b4b4b;
+  color:#202020;
+  line-height: 1.5;
 }
 .article-item.article-info {
   background-color: transparent;
@@ -152,9 +152,38 @@ button[disabled].red-btn:active {
 }
 
 .article-comment-item {
-  background-color:#f3f3f3;
-  padding:20rpx;
-  margin:10px;
-  border:1px solid #eee;
-  box-shadow:8rpx 8rpx 1px #ccc;
+  border-bottom-color: #eee;
+}
+
+.article-comment-item .desc {
+  color: #2b2b2b;
+}
+
+.article-comment-children {
+  padding-left:  30rpx;
+}
+.article-comment-children .desc {
+  margin: 0;
+  font-size: 24rpx;
+}
+.add-comment {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: #8fcdbe;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 110rpx;
+  color: #fff;
+  font-size: 80rpx;
+  box-shadow: 0 0 10px #bbb;
+  font-weight: 200;
+  z-index: 999;
+}
+
+.banner {
+  width: 100%;
+  height: 260rpx;
 }

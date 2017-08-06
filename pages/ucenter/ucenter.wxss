@@ -1,7 +1,7 @@
 /* ucenter.wxss */
 .userinfo {
   padding: 30rpx;
-  background-color: #f3f3f3;
+  background-color: #8fcdbe;
 }
 .userinfo .avatar {
   float: left;
@@ -13,6 +13,7 @@
 .userinfo .nickname,
 .userinfo .gender {
   font-size: 14px;
+  color: #fff;
 }
 .userinfo .gender {
   display: block;
@@ -22,4 +23,6 @@
 .copyright {
   text-align: center;
   padding: 20px 0;
+  font-size: 24rpx;
+  color: #666;
 }

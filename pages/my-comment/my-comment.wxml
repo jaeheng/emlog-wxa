@@ -1,15 +1,23 @@
 <!--my-comment.wxml-->
 <view class="container">
-<text class="page-title">我的评论</text>
 <view>
   <view class="article-item article-comment-item" wx:for="{{ comments }}" wx:key="{{ item.cid }}">
     <view class="info">
       <text class="username">{{ item.poster }}</text>
       <text class="time">{{ item.date }}</text>
     </view>
-    <text class="desc">
+    <view class="desc">
     {{ item.comment }}
-    </text>
+    </view>
+    <view class="article-comment-children" wx:for="{{ item.children }}" wx:for-item="comment" wx:key="{{ comment.cid }}">
+      <view class="info">
+        <text class="username">{{ comment.poster }}</text>
+        <text class="time">{{ comment.date }}</text>
+      </view>
+      <view class="desc">
+      {{ comment.comment }}
+      </view>
+    </view>
   </view>
   <view class="notice" wx:if="{{ comments.length === 0 }}">
     哎呀，您好像还没留过言.

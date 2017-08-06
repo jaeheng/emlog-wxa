@@ -1,6 +1,6 @@
 <!--comment.wxml-->
 <view class="container">
-<text class="page-title">给我留言</text>
+<image src="{{imgUrl}}" class="banner"/>
 <view>
   <view class="article-item article-comment-item" wx:for="{{ comments }}" wx:key="{{ item.cid }}">
     <view class="info">

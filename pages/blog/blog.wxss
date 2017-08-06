@@ -6,11 +6,6 @@
   width: 100%;
 }
 
-.banner {
-  width: 100%;
-  height: 260rpx;
-}
-
 .logo {
   margin: 0 30rpx;
   text-align: center;

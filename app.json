@@ -10,12 +10,12 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#FF4949",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "子恒博客",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#FF4949",
+    "selectedColor": "#8fcdbe",
     "list": [
       {
         "pagePath": "pages/index/index",
