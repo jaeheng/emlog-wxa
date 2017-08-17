@@ -26,5 +26,15 @@
 
 .entry-blog {
   margin-top: 140rpx;
-  padding: 0 200rpx;
+  text-align: center;
+}
+.entry-blog .red-btn,
+.entry-blog .normal-btn {
+  width: 30%;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.entry-blog .normal-btn {
+  background-color: #f3f3f3;
 }

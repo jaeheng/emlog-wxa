@@ -13,6 +13,11 @@ Page({
       url: '../blog/blog'
     })
   },
+  goToMyResume: function () {
+    wx.navigateTo({
+      url: '../resume/resume'
+    })
+  },
   onLoad: function () {
   }
 })

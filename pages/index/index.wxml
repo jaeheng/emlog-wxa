@@ -9,5 +9,6 @@
   </view>
   <view class="entry-blog">
     <button type="default" bindtap="bindViewTap" class="red-btn"> 进入博客 </button>
+    <button type="default" bindtap="goToMyResume" class="normal-btn"> 我的简历 </button>
   </view>
 </view>

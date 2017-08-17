@@ -6,7 +6,8 @@
     "pages/ucenter/ucenter",
     "pages/add-comment/add-comment",
     "pages/comment/comment",
-    "pages/my-comment/my-comment"
+    "pages/my-comment/my-comment",
+    "pages/resume/resume"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -15,7 +16,7 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#8fcdbe",
+    "selectedColor": "#378CC2",
     "list": [
       {
         "pagePath": "pages/index/index",

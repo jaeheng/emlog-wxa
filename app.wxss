@@ -7,17 +7,17 @@
   box-sizing: border-box;
 } 
 a {
-  color: #8fcdbe;
+  color: #378CC2;
 }
 
 button.red-btn {
-  background-color: #8fcdbe;
+  background-color: #378CC2;
   color: #fff;
 }
 
 button.red-btn:active,
 button.red-btn.button-hover {
-  background-color: #aaddd8;
+  background-color: #137dc0;
   color: #fff;
 }
 
@@ -170,7 +170,7 @@ button[disabled].red-btn:active {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  background-color: #8fcdbe;
+  background-color: #378CC2;
   width: 110rpx;
   height: 110rpx;
   border-radius: 50%;
