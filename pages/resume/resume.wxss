@@ -1,1 +1,71 @@
 /* resume.wxss */
+page {
+  background-color: #f3f3f3;
+}
+.resume_header {
+  background-image: url('https://api.zhangziheng.com/static/images/resume-banner.jpg');
+  background-size: cover;
+  text-align: center;
+  padding: 40rpx 0;
+}
+.resume-pic {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  border: 8rpx solid #fff;
+  margin: 0 auto 40rpx;
+  display: block;
+}
+.resume_header .name {
+  color: #fff;
+}
+.resume_header .desc {
+  color: #2367c7;
+}
+.section {
+  background-color: #fff;
+  padding: 0 30rpx;
+  margin-top: 30rpx;
+}
+.section-title {
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #ddd;
+}
+.section-body {
+  padding: 30rpx 0;
+  line-height: 2em;
+}
+
+.timeline {
+  padding-left: 30rpx;
+  border-left: 2rpx solid #eee;
+  padding-bottom: 60rpx;
+}
+.timeline .time {
+  position: relative;
+}
+.timeline .time-current {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -42rpx;
+  margin: auto 0;
+  background: #378CC2;
+  border-radius: 50%;
+  width: 12rpx;
+  height: 12rpx;
+  border: 6rpx solid #eee;
+}
+.timeline .content {
+  color: #999;
+}
+.timeline .strong {
+  color: #333;
+}
+.ul {
+  padding-left: 1.2em;
+}
+.ul .li {
+  display: list-item;
+  list-style-type: circle;
+}

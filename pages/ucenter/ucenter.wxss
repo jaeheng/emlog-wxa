@@ -1,7 +1,8 @@
 /* ucenter.wxss */
 .userinfo {
-  padding: 30rpx;
-  background-color: #8fcdbe;
+  padding: 40rpx;
+  border-top: 1rpx solid #eee;
+  background: #378CC2;
 }
 .userinfo .avatar {
   float: left;

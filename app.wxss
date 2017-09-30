@@ -35,7 +35,7 @@ button[disabled].red-btn:active {
   line-height: 24px;
   font-size: 14px;
   padding: 10px;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1rpx solid #f3f3f3;
 }
 .zh-list-item .icon {
   height: 16px;
@@ -170,17 +170,12 @@ button[disabled].red-btn:active {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  background-color: #378CC2;
   width: 110rpx;
   height: 110rpx;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 110rpx;
-  color: #fff;
-  font-size: 80rpx;
-  box-shadow: 0 0 10px #bbb;
-  font-weight: 200;
   z-index: 999;
+}
+.add-comment:active {
+  opacity: 0.8;
 }
 
 .banner {

@@ -1,19 +1,16 @@
 <!--comment.wxml-->
-<view class="container">
-<image src="{{imgUrl}}" class="banner"/>
-<view>
-  <view class="article-item article-comment-item" wx:for="{{ comments }}" wx:key="{{ item.cid }}">
-    <view class="info">
-      <text class="username">{{ item.poster }}</text>
-      <text class="time">{{ item.date }}</text>
-    </view>
-    <text class="desc">
-    {{ item.comment }}
-    </text>
+<view class="container" style='border-top: 1rpx solid #eee;'>
+<view class="article-item article-comment-item" wx:for="{{ comments }}" wx:key="{{ item.cid }}">
+  <view class="info">
+    <text class="username">{{ item.poster }}</text>
+    <text class="time">{{ item.date }}</text>
   </view>
-  <view class="read-more">
-    {{ isend ? '无更多数据' : '加载中...' }}
-  </view>
+  <text class="desc">
+  {{ item.comment }}
+  </text>
 </view>
-<view class="add-comment" bindtap="addComment" animation="{{animationData}}">+</view>
+<view class="read-more">
+  {{ isend ? '无更多数据' : '加载中...' }}
+</view>
+<image src='../../static/images/add.png' class="add-comment" bindtap="addComment" animation="{{animationData}}"></image>
 </view>

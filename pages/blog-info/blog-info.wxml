@@ -14,7 +14,7 @@
         <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
       </view>
       <view class="comment-btn">
-         <view class="add-comment" bindtap="replyPost">+</view>
+         <image src='../../static/images/add.png' class="add-comment" bindtap="replyPost"></image>
       </view>
   </view>
 

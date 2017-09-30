@@ -19,5 +19,10 @@ Page({
     })
   },
   onLoad: function () {
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '子恒博客'
+    }
   }
 })
