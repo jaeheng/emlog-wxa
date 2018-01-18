@@ -117,12 +117,21 @@ function login (callback, error) {
 function addComment (data, callback, error) {
   var session3rd = getLS('session3rd');
   data.session3rd = session3rd
+  data.poster = data.poster || '小程序用户'
+  data.avatar = data.avatar || 'http://blog.zhangziheng.com/public/images/default-avatar.png'
   http(api.addComment, data, 'POST', callback, error)
 }
 
 function getCommentsByOpenid (page, callback, error) {
   var session3rd = getLS('session3rd');
   http(api.getCommentsByOpenid, { page, session3rd }, 'GET', callback, error)
+}
+
+/**
+ * 获取简历数据
+ */
+function getMyCv(success, error) {
+  http(api.cv, {}, 'GET', success, error)
 }
 
 module.exports = {
@@ -132,5 +141,6 @@ module.exports = {
   getArticleComments,
   login,
   addComment,
-  getCommentsByOpenid
+  getCommentsByOpenid,
+  getMyCv
 }

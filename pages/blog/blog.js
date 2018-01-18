@@ -23,12 +23,6 @@ Page({
     this.getData();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  },
-
   showblogInfo: function (event) {
     console.log(event)
     var gid = event.currentTarget.dataset.gid

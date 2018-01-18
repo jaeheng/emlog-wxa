@@ -58,6 +58,11 @@ Page({
     } else {
       util.addComment({ gid, comment, poster, avatar }, function (res) {
         wx.navigateBack()
+      }, function (msg) {
+        wx.showToast({
+          title: msg,
+          icon: 'loading'
+        })
       })
     }
   }

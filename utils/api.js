@@ -6,5 +6,6 @@ module.exports = {
   getArticleComments: api + '/getArticleComments',
   login: api + '/login',
   addComment: api + '/addComment',
-  getCommentsByOpenid: api + '/getCommentsByOpenid'
+  getCommentsByOpenid: api + '/getCommentsByOpenid',
+  cv: api + '/cv'
 }

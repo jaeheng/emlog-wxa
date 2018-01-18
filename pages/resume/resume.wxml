@@ -1,36 +1,34 @@
 <!--resume.wxml-->
 <view class="container">
   <view class='resume_header'>
-    <image src='https://api.zhangziheng.com/static/images/me.jpg' mode='aspectFit' class='resume-pic'></image>
-    <view class='name'>张子恒</view>
-    <view class='desc'>前端开发工程师</view>
+    <image src='{{ cv.info.avatar }}' mode='aspectFit' class='resume-pic'></image>
+    <view class='name'>{{ cv.info.name }}</view>
+    <view class='desc'>{{ cv.info.job }}</view>
   </view>
 
    <view class='section'>
     <view class='section-title'>基本信息</view>
     <view class='section-body'>
-      <view>最高学历: 本科</view>
-      <view>工作年限: {{ year }}年</view>
-      <view>出生年月: 1992.08</view>
-      <view>所在城市: 北京</view>
-      <view>联系邮箱: jaeheng@126.com</view>
+      <view>最高学历: {{ cv.info.education }}</view>
+      <view>工作年限: {{ cv.info.workingLife }}年</view>
+      <view>出生年月: {{ cv.info.birthday }}</view>
+      <view>所在城市: {{ cv.info.area }}</view>
+      <view>联系邮箱: {{ cv.info.email }}</view>
     </view>
   </view> 
 
   <view class='section'>
     <view class='section-title'>工作经历</view>
     <view class='section-body'>
-      <view class='timeline'>
+      <view class='timeline' wx:for="{{ cv.workExperience }}" wx:key="{{ item.timeStart }}">
         <view class='time'>
-          2015.02-至今
+          {{ item.timeStart }}-{{ item.timeEnd }}
           <view class='time-current'></view>
         </view>
         <view class='content'>
-          <view class='strong'>北京基云惠康科技有限公司/前端开发工程师</view>
+          <view class='strong'>{{ item.name }}/{{ item.job }}</view>
           <view class='ul'>
-            <view class='li'>根据设计稿制作页面</view>
-            <view class='li'>搭建前端开发自动化构建工具</view>
-            <view class='li'>偶尔用PHP写后台业务逻辑。</view>
+            <view class='li' wx:for="{{ item.desc }}" wx:key="{{ item }}">{{ item }}</view>
           </view>
         </view>
       </view>
@@ -42,13 +40,13 @@
     <view class='section-body'>
       <view class='timeline'>
         <view class='time'>
-          2015年毕业
+          {{ cv.education.graduationTime }}
           <view class='time-current'></view>
         </view>
         <view class='content'>
-          <view class='strong'>石家庄学院</view>
+          <view class='strong'>{{ cv.education.name }}</view>
           <view>
-            本科 · 计算机科学与技术
+            {{ cv.education.level }} · {{ cv.education.major }}
           </view>
         </view>
       </view>
@@ -58,99 +56,35 @@
   <view class='section'>
     <view class='section-title'>项目经历</view>
     <view class='section-body'>
-      <view class='timeline'>
+
+      <view class='timeline' wx:for="{{ cv.projectExperience }}" wx:key="{{ item.name }}">
         <view class='time'>
-          2017.05-2017.07
+          {{ item.timeStart }}-{{ item.timeEnd }}
           <view class='time-current'></view>
         </view>
         <view class='content'>
-          <view class='strong'>【项目名称】基因组数据解读平台</view>
-          <view class='strong'>【我的职责】前端开发及跟产品对接需求</view>
+          <view class='strong'>【项目名称】{{ item.name }}</view>
+          <view class='strong'>【我的职责】{{ item.duty }}</view>
           <view class='ul'>
-            <view class='li'>该项目是最近完成的项目，前端采用了vue + elementUI。</view>
-            <view class='li'>通过该项目更加熟悉vuejs, ES6及单页面应用的开发模式</view>
-            <view class='li'>在与产品对接需求，及向组内小伙伴传达需求的过程中，也培养了自己产品上的一些意识。</view>
+            <view class='li' wx:for="{{ item.desc }}" wx:key="item">{{ item }}</view>
           </view>
         </view>
       </view>
 
-      <view class='timeline'>
-        <view class='time'>
-          2017.03-2017.05
-          <view class='time-current'></view>
-        </view>
-        <view class='content'>
-          <view class='strong'>【项目名称】星缘码</view>
-          <view class='strong'>【我的职责】前端开发</view>
-          <view class='ul'>
-            <view class='li'>该项目是基于微信服务号开发的移动web 项目。</view>
-            <view class='li'>该项目采用vuejs + weui来编写，是我在公司项目中使用vue作为框架的第一个项目</view>
-            <view class='li'>很遗憾，由于种种原因，该项目尚未上线</view>
-          </view>
-        </view>
-      </view>
-
-      <view class='timeline'>
-        <view class='time'>
-          2016.12-2017.03
-          <view class='time-current'></view>
-        </view>
-        <view class='content'>
-          <view class='strong'>【项目名称】B端客户及相关业务管理平台</view>
-          <view class='strong'>【我的职责】前端开发</view>
-          <view class='ul'>
-            <view class='li'>本项目是B端客户下订单， 及我们收到订单后进行处理的平台。</view>
-            <view class='li'>该项目采用传统开发模式，切图->套模板->填充数据。我主要的工作是切图，然后在框架视图层自己mock一些数据将页面渲染后交给后端。</view>
-          </view>
-        </view>
-      </view>
-
-      <view class='timeline'>
-        <view class='time'>
-          2016.10-2016.12
-          <view class='time-current'></view>
-        </view>
-        <view class='content'>
-          <view class='strong'>【项目名称】微信小程序版基因解读报告系统</view>
-          <view class='strong'>【我的职责】负责整个基因解读报告系统的设计及编码</view>
-          <view class='ul'>
-            <view class='li'>微信小程序版一脉基因报告系统项目由我设计，开发。</view>
-            <view class='li'>其中主要包括若干项基因解读的报告，及用户注册，绑定样本，绑定主站账号等功能。</view>
-            <view class='li'>通过该项目巩固了ES6及数据驱动的思想。</view>
-          </view>
-        </view>
-      </view>
-
-      <view class='timeline'>
-        <view class='time'>
-          2015.05-2016.12
-          <view class='time-current'></view>
-        </view>
-        <view class='content'>
-          <view class='strong'>【项目名称】一脉基因网站</view>
-          <view class='strong'>【我的职责】根据设计图制作页面</view>
-          <view class='ul'>
-            <view class='li'>该项目是用来展示用户的基因数据检测报告。</view>
-            <view class='li'>并根据基因数据的检测结果，会有一些互动性的应用。</view>
-            <view class='li'>本项目采用jquery及其各种插件制作。</view>
-            <view class='li'>我在本项目中承担了所有的前端开发工作。</view>
-          </view>
-        </view>
-      </view>
     </view>
   </view>
 
   <view class='section'>
     <view class='section-title'>自我描述</view>
     <view class='section-body'>
-    从事前端开发2年多，可以独立开发常用页面组件；熟悉jQuery、vuejs，并使用其开发过完整项目；了解gulp、webpack等前端自动化工具，使用gulp开发过具备常用前端自动化功能的工具；熟悉php，了解前后端的合作方式，使用php开发过公司的后台系统。本人热爱新技术，不惧怕英文文档，期待进入一个优秀的团队。
+    {{ cv.selfDescription }}
     </view>
   </view>
 
   <view class='section'>
     <view class='section-title'>联系我</view>
     <view class='section-body'>
-      邮箱: jaeheng@126.com
+      邮箱: {{ cv.info.email }}
     </view>
   </view>
 </view>
