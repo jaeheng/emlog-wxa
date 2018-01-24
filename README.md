@@ -13,4 +13,4 @@
 
 ## API
 
-可在子恒博客(http://blog.zhangziheng.com)获取API后端代码，目前尚未开源
+可在子恒博客http://blog.zhangziheng.com 获取API后端代码，目前尚未开源
