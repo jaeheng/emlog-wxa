@@ -1,9 +1,10 @@
 //index.js
+import util from '../../utils/util.js'
 Page({
   data: {
-    desc: '记录web开发工作中遇到的问题及解决办法',
+    desc: '...',
     userInfo: {
-      nickName: "子恒博客",
+      nickName: "...",
       avatarUrl: "/static/images/logo.png"
     }
   },
@@ -19,6 +20,12 @@ Page({
     })
   },
   onLoad: function () {
+    util.getSettings(res => {
+      this.setData({
+        desc: res.bloginfo,
+        "userInfo.nickName": res.blogname
+      })
+    })
   },
   onShareAppMessage: function () {
     return {

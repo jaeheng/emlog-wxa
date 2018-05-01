@@ -3,16 +3,13 @@
     "pages/index/index",
     "pages/blog-info/blog-info",
     "pages/blog/blog",
-    "pages/ucenter/ucenter",
-    "pages/add-comment/add-comment",
     "pages/comment/comment",
-    "pages/my-comment/my-comment",
     "pages/resume/resume"
   ],
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "子恒博客",
+    "navigationBarTitleText": "博客首页",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -26,15 +23,9 @@
       },
       {
         "pagePath": "pages/comment/comment",
-        "text": "留言",
+        "text": "留言板",
         "iconPath": "static/images/comment.png",
         "selectedIconPath": "static/images/comment-active.png"
-      },
-      {
-        "pagePath": "pages/ucenter/ucenter",
-        "text": "我",
-        "iconPath": "static/images/me.png",
-        "selectedIconPath": "static/images/me-active.png"
       }
     ]
   },

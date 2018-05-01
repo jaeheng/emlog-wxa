@@ -64,8 +64,8 @@ function http (url, params, type, success, error, needLoading) {
 /**
  * 获取某分类下的文章
  */
-function getArticle(sort, page, success, error) {
-  http(api.getArticle, { sort, page }, 'GET', success, error)
+function getArticle(page, success, error) {
+  http(api.getArticle, { page }, 'GET', success, error)
 }
 
 /**
@@ -130,8 +130,15 @@ function getCommentsByOpenid (page, callback, error) {
 /**
  * 获取简历数据
  */
-function getMyCv(success, error) {
+function getMyCv (success, error) {
   http(api.cv, {}, 'GET', success, error)
+}
+
+/**
+ * 获取博客设置信息
+ */
+function getSettings (success, error) {
+  http(api.getSettings, {}, 'GET', success, error)
 }
 
 module.exports = {
@@ -142,5 +149,6 @@ module.exports = {
   login,
   addComment,
   getCommentsByOpenid,
-  getMyCv
+  getMyCv,
+  getSettings
 }

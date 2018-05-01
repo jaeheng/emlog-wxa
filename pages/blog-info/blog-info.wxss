@@ -1,5 +1,4 @@
 /* blog-info.wxss */
-@import "../../utils/wxParse/wxParse.wxss";
 .wxParse-pre {
   white-space: normal;
   width: 100%;

@@ -6,7 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sort: 45,
     page: 0,
     data: [],
     total: 0,
@@ -34,11 +33,10 @@ Page({
   getData: function (fromStart) {
     let isEnd = this.data.isend
     if (isEnd && !fromStart) return false
-    let sort = this.data.sort
     var page = fromStart ? 1 : this.data.page + 1
     let that = this
     let oldData = this.data.data
-    util.getArticle(sort, page, function (data) {
+    util.getArticle(page, function (data) {
       that.setData({
         page: page,
         data: fromStart ? data.data : oldData.concat(data.data),
