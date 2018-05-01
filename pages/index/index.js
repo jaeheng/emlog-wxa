@@ -29,7 +29,7 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '子恒博客'
+      title: this.data.userInfo.nickName
     }
   }
 })
