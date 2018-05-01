@@ -1,8 +1,0 @@
-/* comment.wxss */
-.notice {
-  background: #E6A23C;
-  text-align: center;
-  font-size: 12px;
-  padding: 5px 0;
-  color: #fff;
-}

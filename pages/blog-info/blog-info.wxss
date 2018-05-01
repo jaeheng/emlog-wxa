@@ -34,4 +34,12 @@
 }
 .article-info {
   border-bottom: none;
+  padding-bottom: 46px;
+}
+.cnbtn {
+  position: fixed;
+  bottom:0;
+  left:0;
+  right: 0;
+  border-radius: 0;
 }

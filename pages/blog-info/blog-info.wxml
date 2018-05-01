@@ -15,20 +15,5 @@
          <image src='../../static/images/add.png' class="add-comment" bindtap="replyPost"></image>
       </view>
   </view>
-
-  <text class="page-title" style="border-top: 1px solid #f3f3f3;">网友怎么说</text>
-  <scroll-view class="comment" bindscrolltolower="getComments">
-    <view class="article-item article-comment-item" wx:for="{{ comments }}" wx:key="{{ item.cid }}">
-      <view class="info">
-        <text class="username">{{ item.poster }}</text>
-        <text class="time">{{ item.date }}</text>
-      </view>
-      <view class="desc">
-        {{ item.comment }}
-      </view>
-    </view>
-    <view class="read-more">
-        {{ isend ? '无更多数据' : '加载中...' }}
-    </view>
-  </scroll-view>
+  <button class='cnbtn red-btn' open-type="contact">联系博主</button>
 </view>

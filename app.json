@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/blog-info/blog-info",
     "pages/blog/blog",
-    "pages/comment/comment",
     "pages/resume/resume"
   ],
   "window": {
@@ -22,10 +21,10 @@
         "selectedIconPath": "static/images/blog-active.png"
       },
       {
-        "pagePath": "pages/comment/comment",
-        "text": "留言板",
-        "iconPath": "static/images/comment.png",
-        "selectedIconPath": "static/images/comment-active.png"
+        "pagePath": "pages/resume/resume",
+        "text": "关于作者",
+        "iconPath": "static/images/resume.png",
+        "selectedIconPath": "static/images/resume-active.png"
       }
     ]
   },
