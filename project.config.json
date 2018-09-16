@@ -1,16 +1,16 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.0",
+	"libVersion": "2.3.0",
 	"appid": "wx4f6bf6a4274d956c",
-	"projectname": "blog-wechat-2",
+	"projectname": "emlog-wxa",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -31,20 +31,14 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "留言",
-					"pathName": "pages/comment/comment",
+					"id": 0,
+					"name": "板块",
+					"pathName": "pages/sorts/sorts",
 					"query": ""
 				},
 				{
 					"id": -1,
-					"name": "个人中心",
-					"pathName": "pages/ucenter/ucenter",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "我的简历",
+					"name": "关于",
 					"pathName": "pages/resume/resume",
 					"query": ""
 				},

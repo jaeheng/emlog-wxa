@@ -64,74 +64,30 @@ function http (url, params, type, success, error, needLoading) {
 /**
  * 获取某分类下的文章
  */
-function getArticle(page, success, error) {
-  http(api.getArticle, { page }, 'GET', success, error)
+function getArticle(page, sid, success, error) {
+  http(api.getArticle + page + '&sid=' + sid, {}, 'GET', success, error)
 }
 
 /**
  * 获取文章详情
  */
 function getArticleInfo(gid, success, error) {
-  http(api.getArticleInfo, { gid }, 'GET', success, error)
+  http(api.getArticleInfo + gid, {}, 'GET', success, error)
 }
-
 /**
- * 获取某文章下的评论
+ * 设置本地存储内容
  */
-function getArticleComments(gid, page, success, error) {
-  http(api.getArticleComments, { gid, page }, 'GET', success, error, false)
-}
-
 function setLS (key, value) {
   wx.setStorage({
     key: key,
     data: value
   })
 }
-
+/**
+ * 获取本地存储内容
+ */
 function getLS (key) {
   return wx.getStorageSync(key)
-}
-
-function login (callback, error) {
-  wx.login({
-    success: function (res) {
-      if (res.code) {
-        //发起网络请求
-        http(api.login, { code: res.code }, 'GET', function (res) {
-          var session3rd = res.session3rd
-          setLS('session3rd', session3rd)
-          typeof callback == 'function' && callback()
-        }, error)
-      } else {
-        console.log('获取用户登录态失败！' + res.errMsg)
-        unloading()
-      }
-    }
-  });
-}
-
-/**
- * 添加评论
- */
-function addComment (data, callback, error) {
-  var session3rd = getLS('session3rd');
-  data.session3rd = session3rd
-  data.poster = data.poster || '小程序用户'
-  data.avatar = data.avatar || 'http://blog.zhangziheng.com/public/images/default-avatar.png'
-  http(api.addComment, data, 'POST', callback, error)
-}
-
-function getCommentsByOpenid (page, callback, error) {
-  var session3rd = getLS('session3rd');
-  http(api.getCommentsByOpenid, { page, session3rd }, 'GET', callback, error)
-}
-
-/**
- * 获取简历数据
- */
-function getMyCv (success, error) {
-  http(api.cv, {}, 'GET', success, error)
 }
 
 /**
@@ -141,14 +97,17 @@ function getSettings (success, error) {
   http(api.getSettings, {}, 'GET', success, error)
 }
 
+/**
+ * 获取分类列表
+ */
+function getSorts (success, error) {
+  http(api.getSorts, {}, 'GET', success, error)
+}
+
 module.exports = {
   formatTime,
   getArticle,
   getArticleInfo,
-  getArticleComments,
-  login,
-  addComment,
-  getCommentsByOpenid,
-  getMyCv,
-  getSettings
+  getSettings,
+  getSorts
 }

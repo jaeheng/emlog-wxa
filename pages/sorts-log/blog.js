@@ -8,6 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    sortname: '',
+    sid: 0,
     page: 0,
     data: [],
     loading: true, // 是否显示loading
@@ -19,6 +21,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      sid: options.sid,
+      sortname: options.sortname
+    })
     this.getData();
   },
 
@@ -36,9 +42,10 @@ Page({
     var page = fromStart ? 1 : this.data.page + 1
     let that = this
     let oldData = this.data.data
+    let sid = this.data.sid
     app.getSetting(setting => {
       console.log('setting', setting);
-      util.getArticle(page, 0, function (data) {
+      util.getArticle(page, sid, function (data) {
         that.setData({
           page: page,
           data: fromStart ? data : oldData.concat(data),
@@ -57,8 +64,11 @@ Page({
     this.getData(1);
   },
 
-  onShareAppMessage: function (res) {
-    return {
-    }
+  onReady: function () {
+    var sortname = this.data.sortname
+    console.log(sortname)
+    wx.setNavigationBarTitle({
+      title: sortname
+    })
   }
 })

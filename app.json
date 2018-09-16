@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/blog-info/blog-info",
     "pages/blog/blog",
-    "pages/resume/resume"
+    "pages/blog-info/blog-info",
+    "pages/resume/resume",
+    "pages/sorts/sorts",
+    "pages/sorts-log/blog"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -15,14 +16,20 @@
     "selectedColor": "#378CC2",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/blog/blog",
         "text": "博客",
         "iconPath": "static/images/blog.png",
         "selectedIconPath": "static/images/blog-active.png"
       },
       {
+        "pagePath": "pages/sorts/sorts",
+        "text": "板块",
+        "iconPath": "static/images/sort.png",
+        "selectedIconPath": "static/images/sort-active.png"
+      },
+      {
         "pagePath": "pages/resume/resume",
-        "text": "关于作者",
+        "text": "关于",
         "iconPath": "static/images/resume.png",
         "selectedIconPath": "static/images/resume-active.png"
       }

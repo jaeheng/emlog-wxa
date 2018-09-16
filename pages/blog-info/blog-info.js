@@ -9,11 +9,7 @@ Page({
   data: {
     gid: 0,
     data: {},
-    error: '',
-    total: 0,
-    page: 0,
-    comments: [],
-    isend: false
+    error: ''
   },
 
   /**
@@ -31,21 +27,13 @@ Page({
    */
   onShow: function () {
     this.getArticleInfo()
-    this.getComments(1)
-  },
-
-  replyPost: function (e) {
-    var gid = this.data.gid
-    wx.navigateTo({
-      url: '../add-comment/add-comment?gid=' + gid
-    })
   },
 
   getArticleInfo: function () {
     var gid = this.data.gid
     var that = this
     util.getArticleInfo(gid, function (success) {
-
+      success.content = success.content.replace(/\<img/gi, '<img class="rich-img" ');
       that.setData({
         data: success
       })
@@ -56,29 +44,8 @@ Page({
     })
   },
 
-  getComments: function (fromStart) {
-    let isEnd = this.data.isend
-    if (isEnd && !fromStart) return false
-    var gid = this.data.gid
-    var page = fromStart ? 1 : this.data.page
-    var that = this
-    var oldData = this.data.comments
-
-    util.getArticleComments(gid, page, function (success) {
-      that.setData({
-        page: page,
-        comments: fromStart ? success.data : oldData.concat(success.data),
-        total: success.total,
-        isend: success.data.length < 10
-      })
-
-      wx.stopPullDownRefresh()
-    })
-  },
-
   onPullDownRefresh: function () {
     this.getArticleInfo()
-    this.getComments(1)
   },
   onShareAppMessage: function (res) {
     return {

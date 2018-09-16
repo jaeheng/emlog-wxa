@@ -15,5 +15,4 @@
          <image src='../../static/images/add.png' class="add-comment" bindtap="replyPost"></image>
       </view>
   </view>
-  <button class='cnbtn red-btn' open-type="contact">联系博主</button>
 </view>

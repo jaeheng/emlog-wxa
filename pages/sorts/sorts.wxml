@@ -1,0 +1,19 @@
+<!--pages/sorts/sorts.wxml-->
+<view class='sorts'>
+  <block wx:for="{{ sorts }}" wx:key="{{ item.sid }}">
+    <template is="sort" data="{{ ...item }}"></template>
+    <block wx:if="item.children && item.children.length > 0" wx:for="{{ item.children }}" wx:for-item="child" wx:key="{{ child.sid }}">
+      <template is="sort" data="{{ ...child }}"></template>
+    </block>
+  </block>
+</view>
+
+<template name="sort">
+  <view class='sorts-item' data-sid="{{ sid }}" data-sortname="{{ sortname }}" bindtap="goSortLogs">
+    <view class='item-link'>
+      <view class='title'>{{ sortname }}</view>
+      <view class='desc'>{{ description }}</view>
+      <view class='num'>{{ lognum }}</view>
+    </view>
+  </view>
+</template>

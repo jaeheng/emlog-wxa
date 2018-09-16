@@ -1,90 +1,20 @@
 <!--resume.wxml-->
 <view class="container">
   <view class='resume_header'>
-    <image src='{{ cv.info.avatar }}' mode='aspectFit' class='resume-pic'></image>
-    <view class='name'>{{ cv.info.name }}</view>
-    <view class='desc'>{{ cv.info.job }}</view>
-  </view>
-
-   <view class='section'>
-    <view class='section-title'>基本信息</view>
-    <view class='section-body'>
-      <view>最高学历: {{ cv.info.education }}</view>
-      <view>工作年限: {{ cv.info.workingLife }}年</view>
-      <view>出生年月: {{ cv.info.birthday }}</view>
-      <view>所在城市: {{ cv.info.area }}</view>
-      <view>联系邮箱: {{ cv.info.email }}</view>
-    </view>
-  </view> 
-
-  <view class='section'>
-    <view class='section-title'>工作经历</view>
-    <view class='section-body'>
-      <view class='timeline' wx:for="{{ cv.workExperience }}" wx:key="{{ item.timeStart }}">
-        <view class='time'>
-          {{ item.timeStart }}-{{ item.timeEnd }}
-          <view class='time-current'></view>
-        </view>
-        <view class='content'>
-          <view class='strong'>{{ item.name }}/{{ item.job }}</view>
-          <view class='ul'>
-            <view class='li' wx:for="{{ item.desc }}" wx:key="{{ item }}">{{ item }}</view>
-          </view>
-        </view>
-      </view>
-    </view>
+    <image src='{{ setting.user_avatar }}' mode='aspectFit' class='resume-pic'></image>
+    <view class='name'>{{ setting.blogname }}</view>
   </view>
 
   <view class='section'>
-    <view class='section-title'>教育经历</view>
+    <view class='section-title'>博客介绍</view>
     <view class='section-body'>
-      <view class='timeline'>
-        <view class='time'>
-          {{ cv.education.graduationTime }}
-          <view class='time-current'></view>
-        </view>
-        <view class='content'>
-          <view class='strong'>{{ cv.education.name }}</view>
-          <view>
-            {{ cv.education.level }} · {{ cv.education.major }}
-          </view>
-        </view>
-      </view>
+      {{ setting.bloginfo }}
     </view>
   </view>
-
-  <view class='section'>
-    <view class='section-title'>项目经历</view>
-    <view class='section-body'>
-
-      <view class='timeline' wx:for="{{ cv.projectExperience }}" wx:key="{{ item.name }}">
-        <view class='time'>
-          {{ item.timeStart }}-{{ item.timeEnd }}
-          <view class='time-current'></view>
-        </view>
-        <view class='content'>
-          <view class='strong'>【项目名称】{{ item.name }}</view>
-          <view class='strong'>【我的职责】{{ item.duty }}</view>
-          <view class='ul'>
-            <view class='li' wx:for="{{ item.desc }}" wx:key="item">{{ item }}</view>
-          </view>
-        </view>
-      </view>
-
-    </view>
-  </view>
-
-  <view class='section'>
-    <view class='section-title'>自我描述</view>
-    <view class='section-body'>
-    {{ cv.selfDescription }}
-    </view>
-  </view>
-
   <view class='section'>
     <view class='section-title'>联系我</view>
     <view class='section-body'>
-      邮箱: {{ cv.info.email }}
+      Email: {{ setting.user_email }}
     </view>
   </view>
 </view>

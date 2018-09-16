@@ -79,6 +79,7 @@ button[disabled].red-btn:active {
 }
 .article-item .username,
 .article-item .sort,
+.article-item .view,
 .article-item .time {
   font-size: 12px;
   line-height: 20px;
@@ -86,6 +87,7 @@ button[disabled].red-btn:active {
   display: block;
   color: #aaa;
 }
+.article-item .view,
 .article-item .username,
 .article-item .sort {
   float: left;
@@ -94,25 +96,31 @@ button[disabled].red-btn:active {
 .article-item .time {
   float: right;
 }
+.article-item.with-pic {
+  padding-right: 200rpx;
+  position: relative;
+  padding-bottom: 1.5em;
+}
+.article-item.with-pic .title {
+  min-height: 3.5em;
+}
+.article-item.with-pic .info {
+  position:absolute;
+  width:100%;
+  box-sizing:border-box;
+  bottom:10rpx;
+}
+.article-item.with-pic .desc-img {
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  width: 180rpx;
+}
 .article-item .desc,
-.article-item .desc-with-pic,
 .article-item .desc-with-pics {
   font-size: 14px;
   line-height: 1.5;
   color: #787878;
-  padding: 10px 0;
-}
-
-.article-item .desc-with-pic {
-  position: relative;
-  padding-right: 300rpx;
-}
-.article-item .desc-with-pic .desc-img {
-  width: 280rpx;
-  height: 200rpx;
-  position: absolute;
-  right: -10rpx;
-  top: 10px;
 }
 .article-item .desc-with-pics .desc-pics {
   display: flex;
@@ -120,6 +128,7 @@ button[disabled].red-btn:active {
 .article-item .desc-with-pics .desc-img {
   flex: 1;
   padding: 20rpx 10rpx;
+  height: 200rpx;
 }
 
 .article-item .title {
