@@ -1,4 +1,4 @@
-let domain = 'http://localhost:8090';
+let domain = 'https://blog.zhangziheng.com';
 let api = domain + '/api.php?route='
 
 module.exports = {

@@ -100,6 +100,7 @@ button[disabled].red-btn:active {
   padding-right: 200rpx;
   position: relative;
   padding-bottom: 1.5em;
+  min-height: 150rpx;
 }
 .article-item.with-pic .title {
   min-height: 3.5em;
@@ -108,13 +109,15 @@ button[disabled].red-btn:active {
   position:absolute;
   width:100%;
   box-sizing:border-box;
-  bottom:10rpx;
+  bottom:20rpx;
 }
 .article-item.with-pic .desc-img {
   position: absolute;
   right: 0;
-  top: 30rpx;
+  top: 20rpx;
   width: 180rpx;
+  height: 145rpx;
+  overflow: hidden;
 }
 .article-item .desc,
 .article-item .desc-with-pics {

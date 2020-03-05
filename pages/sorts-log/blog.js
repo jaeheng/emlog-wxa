@@ -14,7 +14,7 @@ Page({
     data: [],
     loading: true, // 是否显示loading
     isend: false, // 是否最后一页
-    imgUrl: 'https://api.zhangziheng.com/static/images/banner2.png'
+    imgUrl: util.getRandomBanner()
   },
 
   /**

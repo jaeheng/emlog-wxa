@@ -104,10 +104,21 @@ function getSorts (success, error) {
   http(api.getSorts, {}, 'GET', success, error)
 }
 
+/**
+ * 获取随机的banner图片
+ * index: 随机数字1-9
+ * 若需更改图片，更改图片连接即可
+ */
+function getRandomBanner () {
+  let index = Math.ceil(Math.random() * 9)
+  return 'https://blog.zhangziheng.com/content/templates/beginning/static/images/banner/banner' + index + '.jpg'
+}
+
 module.exports = {
   formatTime,
   getArticle,
   getArticleInfo,
   getSettings,
-  getSorts
+  getSorts,
+  getRandomBanner
 }

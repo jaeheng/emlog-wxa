@@ -33,7 +33,9 @@ Page({
     var gid = this.data.gid
     var that = this
     util.getArticleInfo(gid, function (success) {
-      success.content = success.content.replace(/\<img/gi, '<img class="rich-img" ');
+      success.content = success.content.replace(/<img/gi, '<img style="max-width:100%;height:auto;float:left;display:block" ')
+        .replace(/<section/g, '<div')
+        .replace(/\/section>/g, '\div>');
       that.setData({
         data: success
       })

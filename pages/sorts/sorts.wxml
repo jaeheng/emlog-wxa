@@ -1,8 +1,8 @@
 <!--pages/sorts/sorts.wxml-->
 <view class='sorts'>
-  <block wx:for="{{ sorts }}" wx:key="{{ item.sid }}">
+  <block wx:for="{{ sorts }}" wx:key="sid">
     <template is="sort" data="{{ ...item }}"></template>
-    <block wx:if="item.children && item.children.length > 0" wx:for="{{ item.children }}" wx:for-item="child" wx:key="{{ child.sid }}">
+    <block wx:if="item.children && item.children.length > 0" wx:for="{{ item.children }}" wx:for-item="child" wx:key="sid">
       <template is="sort" data="{{ ...child }}"></template>
     </block>
   </block>

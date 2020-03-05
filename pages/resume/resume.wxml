@@ -9,6 +9,9 @@
     <view class='section-title'>博客介绍</view>
     <view class='section-body'>
       {{ setting.bloginfo }}
+      <view>
+      博客地址: {{ setting.blogurl }}
+      </view>
     </view>
   </view>
   <view class='section'>

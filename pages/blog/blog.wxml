@@ -1,9 +1,10 @@
 <!--blog.wxml-->
+<import src="/template.wxml"/>
 <view class="container blog-view">
 <image src="{{imgUrl}}" class="banner"/>
 
 <view onReachBottom="getData">
-  <block wx:for="{{ data }}" wx:key="{{ item.gid }}">
+  <block wx:for="{{ data }}" wx:key="gid">
     <template is="normalAritcle" data="{{ ...item }}"></template>
   </block>
 </view>
@@ -11,21 +12,3 @@
   {{ isend ? '无更多数据' : '加载中...' }}
 </view>
 </view>
-
-<!-- 普通列表 -->
-<template name="normalAritcle">
-  <view class="article-item {{ imgs.length === 1 ? 'with-pic' : '' }}" data-gid="{{ gid }}" wx:key="{{ gid }}" bindtap="showblogInfo">
-    <text class="title">{{ title }}</text>
-    <image src="{{ imgs[0] }}" mode='widthFix' class="desc-img" wx:if="{{ imgs.length === 1 }}"></image>
-    <view class="desc-with-pics" wx:if="{{ imgs.length > 1 }}">
-      <view class="desc-pics">
-        <image src="{{ img }}" mode="scaleToFill" wx:for-item="img" wx:for-index="key" wx:for="{{ imgs }}" wx:key="{{ img }}" class="desc-img"></image>
-      </view>
-    </view>
-    <view class="info">
-      <text class="sort">评论: ({{ comnum }})</text>
-      <text class="sort">阅读: ({{ views }})</text>
-      <text class="time">{{ date }}</text>
-    </view>
-  </view>
-</template>

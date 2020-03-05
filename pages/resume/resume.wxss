@@ -3,7 +3,8 @@ page {
   background-color: #f3f3f3;
 }
 .resume_header {
-  background-image: url('https://api.zhangziheng.com/static/images/resume-banner.jpg');
+  background-color: #2367c7;
+  background-image: url('https://blog.zhangziheng.com/content/templates/beginning/static/images/banner/banner1.jpg');
   background-size: cover;
   text-align: center;
   padding: 40rpx 0;
