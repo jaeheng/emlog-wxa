@@ -1,4 +1,5 @@
 import api from './api'
+import config from '../config'
 
 function formatTime(date) {
   var year = date.getFullYear()
@@ -32,16 +33,20 @@ function unloading () {
 /**
  * http操作
  */
-function http (url, params, type, success, error, needLoading) {
+function http (url, params, type, success, error, needLoading, headers) {
   if (typeof needLoading !== 'boolean' || needLoading) {
     loading()
+  }
+  if (!headers) {
+    headers = {}
   }
   wx.request({
     url: url,
     data: params,
     method: type,
     header: {
-      'content-type': 'application/x-www-form-urlencoded'
+      'content-type': 'application/x-www-form-urlencoded',
+      ...headers
     },
     success: function (resp) {
       var data = resp.data
@@ -73,6 +78,13 @@ function getArticle(page, sid, success, error) {
  */
 function getArticleInfo(gid, success, error) {
   http(api.getArticleInfo + gid, {}, 'GET', success, error)
+}
+
+/**
+ * 获取某文章下的评论
+ */
+function getArticleComments(gid, page, success, error) {
+  http(api.getArticleComments, { gid, page }, 'GET', success, error, false)
 }
 /**
  * 设置本地存储内容
@@ -110,8 +122,15 @@ function getSorts (success, error) {
  * 若需更改图片，更改图片连接即可
  */
 function getRandomBanner () {
-  let index = Math.ceil(Math.random() * 9)
-  return 'https://blog.zhangziheng.com/content/templates/beginning/static/images/banner/banner' + index + '.jpg'
+  return '../../static/images/banner.jpg'
+}
+
+/**
+ * 添加评论
+ */
+function addComment (data, callback, error) {
+  data.poster = data.poster || '小程序用户'
+  http(api.addComment, data, 'POST', callback, error)
 }
 
 module.exports = {
@@ -120,5 +139,7 @@ module.exports = {
   getArticleInfo,
   getSettings,
   getSorts,
-  getRandomBanner
+  getRandomBanner,
+  getArticleComments,
+  addComment
 }

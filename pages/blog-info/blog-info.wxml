@@ -11,8 +11,27 @@
       <view class="desc">
         <rich-text nodes="{{ data.content }}"></rich-text>
       </view>
-      <view class="comment-btn" wx:if="{{ false }}">
+      <view class="info" style="padding-top: 20px;">
+        <text class="view">发布者: {{ data.wxa_poster || data.nickname }}</text>
+      </view>
+      <view class="comment-btn" wx-if="{{ setting.iscomment === 'y' }}">
          <image src='../../static/images/add.png' class="add-comment" bindtap="replyPost"></image>
       </view>
   </view>
+
+  <text class="page-title" style="border-top: 1px solid #f3f3f3;" wx-if="{{ setting.iscomment === 'y' }}">最新评论</text>
+  <scroll-view class="comment" bindscrolltolower="getComments" wx-if="{{ setting.iscomment === 'y' }}">
+    <view class="article-item article-comment-item" wx:for="{{ comments }}">
+      <view class="info">
+        <text class="username">{{ item.poster }}</text>
+        <text class="time">{{ item.date }}</text>
+      </view>
+      <view class="desc">
+        {{ item.comment }}
+      </view>
+    </view>
+    <view class="read-more">
+        {{ isend ? '无更多数据' : '加载中...' }}
+    </view>
+  </scroll-view>
 </view>

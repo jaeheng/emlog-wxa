@@ -12,7 +12,8 @@ Page({
     data: [],
     loading: true, // 是否显示loading
     isend: false, // 是否最后一页
-    imgUrl: util.getRandomBanner()
+    imgUrl: util.getRandomBanner(),
+    setting: {}
   },
 
   /**
@@ -60,5 +61,22 @@ Page({
   onShareAppMessage: function (res) {
     return {
     }
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onShow: function () {
+    var that = this
+    app.getSetting(function(setting) {
+      console.log('setting:', setting)
+      that.setData({
+        setting: setting
+      })
+    })
+  },
+  addBlog: function () {
+    wx.navigateTo({
+      url: '../add-blog/add-blog'
+    })
   }
 })

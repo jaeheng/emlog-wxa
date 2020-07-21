@@ -4,6 +4,7 @@
     "pages/blog-info/blog-info",
     "pages/resume/resume",
     "pages/sorts/sorts",
+    "pages/add-comment/add-comment",
     "pages/sorts-log/blog"
   ],
   "window": {
@@ -13,7 +14,9 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "selectedColor": "#378CC2",
+    "color": "#333",
+    "backgroundColor": "#fff",
+    "selectedColor": "#1296db",
     "list": [
       {
         "pagePath": "pages/blog/blog",
@@ -30,8 +33,8 @@
       {
         "pagePath": "pages/resume/resume",
         "text": "关于",
-        "iconPath": "static/images/resume.png",
-        "selectedIconPath": "static/images/resume-active.png"
+        "iconPath": "static/images/about.png",
+        "selectedIconPath": "static/images/about-active.png"
       }
     ]
   },

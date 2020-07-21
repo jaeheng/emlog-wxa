@@ -1,0 +1,11 @@
+<!--add-comment.wxml-->
+<view class="container">
+  <textarea auto-height auto-focus placeholder="请文明留言" class="comment-box" value="{{ comment }}" bindinput="changeHandle"/>
+  <view style="text-align: center;margin-top: 1em;">{{ userInfo.nickName }}</view>
+  <button
+  open-type="getUserInfo"
+  wx-if="{{ !userInfo.nickName }}"
+  class="red-btn"
+  bindgetuserinfo="getUserinfoHandle">评论前请先授权</button>
+  <button class="red-btn" bindtap="addComment" disabled="{{ disabled || !userInfo.nickName }}"> 提交评论 </button>
+</view>

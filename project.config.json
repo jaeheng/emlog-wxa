@@ -3,15 +3,16 @@
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
-		"enhance": false,
-		"postcss": true,
+		"enhance": true,
+		"postcss": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
-		"nodeModules": false,
-		"autoAudits": false,
+		"nodeModules": true,
+		"autoAudits": true,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"uglifyFileName": true,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -19,14 +20,24 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"remoteDebugLogEnable": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.3.0",
+	"libVersion": "2.11.2",
 	"appid": "wx4f6bf6a4274d956c",
 	"projectname": "emlog-wxa",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"qqappid": "1108100302",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"qqLibVersion": "1.16.0",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -41,6 +52,10 @@
 			"list": []
 		},
 		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
@@ -63,6 +78,27 @@
 					"name": "文章页",
 					"pathName": "pages/blog-info/blog-info",
 					"query": "gid=463"
+				},
+				{
+					"id": -1,
+					"name": "pages/blog-info/blog-info",
+					"pathName": "pages/blog-info/blog-info",
+					"query": "gid=1216",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/add-comment/add-comment",
+					"pathName": "pages/add-comment/add-comment",
+					"query": "gid=1216",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/add-blog/add-blog",
+					"pathName": "pages/add-blog/add-blog",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
