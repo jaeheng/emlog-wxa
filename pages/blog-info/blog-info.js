@@ -101,5 +101,10 @@ Page({
     return {
       title: this.data.data.title
     }
+  },
+  onShareTimeline: function (res) {
+    return {
+      title: this.data.data.title
+    }
   }
 })

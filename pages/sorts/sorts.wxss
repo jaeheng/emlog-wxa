@@ -9,14 +9,16 @@
   box-sizing: border-box;
   padding: 10rpx;
   vertical-align: top;
+  margin-bottom: 10px;
 }
 .sorts-item .item-link {
-  border: 1px solid #eee;
-  padding: 20rpx;
+  border: 1px solid #f3f3f3;
+  padding: 50rpx 30rpx;
   position: relative;
   height: 100%;
   box-sizing: border-box;
-  background: #fafafa;
+  background: #fff;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,.3);
 }
 .sorts-item .title {
   font-size: 40rpx;
@@ -29,6 +31,7 @@
 }
 .sorts-item .num {
   position: absolute;
-  right: 20rpx;
+  right: 30rpx;
   top: 20rpx;
+  font-size: 60rpx;
 }

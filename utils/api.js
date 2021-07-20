@@ -7,7 +7,5 @@ module.exports = {
   getSettings: api + 'options',
   getSorts: api + 'sorts',
   getArticleComments: api + 'comments',
-  addComment: api + 'addComment',
-  addBlog: api + 'addBlog',
-  uploadImg: api + 'uploadImg'
+  addComment: api + 'addComment'
 }

@@ -13,7 +13,8 @@ Page({
     loading: true, // 是否显示loading
     isend: false, // 是否最后一页
     imgUrl: util.getRandomBanner(),
-    setting: {}
+    setting: {},
+    keyword: ""
   },
 
   /**
@@ -24,7 +25,6 @@ Page({
   },
 
   showblogInfo: function (event) {
-    console.log(event)
     var gid = event.currentTarget.dataset.gid
     wx.navigateTo({
       url: '../blog-info/blog-info?gid=' + gid
@@ -38,14 +38,12 @@ Page({
     let that = this
     let oldData = this.data.data
     app.getSetting(setting => {
-      console.log('setting', setting);
-      util.getArticle(page, 0, function (data) {
+      util.getArticle(page, 0, '', function (data) {
         that.setData({
           page: page,
           data: fromStart ? data : oldData.concat(data),
           isend: data.length < setting.index_lognum // 判断每页文章条数，小于这条数说明是最后一页
         })
-
         wx.stopPullDownRefresh()
       });
     });
@@ -62,6 +60,9 @@ Page({
     return {
     }
   },
+  onShareTimeline: function (res) {
+    return {}
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -72,11 +73,6 @@ Page({
       that.setData({
         setting: setting
       })
-    })
-  },
-  addBlog: function () {
-    wx.navigateTo({
-      url: '../add-blog/add-blog'
     })
   }
 })

@@ -1,0 +1,9 @@
+<mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+
+<mp-loading type="circle" show="{{show}}"></mp-loading>
+
+<view style="text-align: center;" wx:if="{{ isEmpty }}">
+  <image src="../../static/images/empty.svg"></image>
+  <view style="color: #636363;">未搜索到文章</view>
+</view>
+

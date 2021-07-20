@@ -5,7 +5,8 @@
     "pages/resume/resume",
     "pages/sorts/sorts",
     "pages/add-comment/add-comment",
-    "pages/sorts-log/blog"
+    "pages/sorts-log/blog",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -31,6 +32,12 @@
         "selectedIconPath": "static/images/sort-active.png"
       },
       {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "static/images/search.png",
+        "selectedIconPath": "static/images/search-active.png"
+      },
+      {
         "pagePath": "pages/resume/resume",
         "text": "关于",
         "iconPath": "static/images/about.png",
@@ -43,5 +50,8 @@
     "downloadFile": 100000
   },
   "debug": true,
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

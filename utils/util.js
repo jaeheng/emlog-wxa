@@ -69,8 +69,8 @@ function http (url, params, type, success, error, needLoading, headers) {
 /**
  * 获取某分类下的文章
  */
-function getArticle(page, sid, success, error) {
-  http(api.getArticle + page + '&sid=' + sid, {}, 'GET', success, error)
+function getArticle(page, sid, keyword, success, error) {
+  http(api.getArticle + page + '&sid=' + sid + '&keyword=' + keyword, {}, 'GET', success, error)
 }
 
 /**

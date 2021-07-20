@@ -37,5 +37,8 @@ Page({
     wx.navigateTo({
       url: '../sorts-log/blog?sid=' + sid + '&sortname=' + sortname
     });
+  },
+  onShareTimeline: function (res) {
+    return {}
   }
 })

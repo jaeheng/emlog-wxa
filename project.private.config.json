@@ -1,0 +1,55 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "板块",
+          "pathName": "pages/sorts/sorts",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "关于",
+          "pathName": "pages/resume/resume",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "文章页",
+          "pathName": "pages/blog-info/blog-info",
+          "query": "gid=463"
+        },
+        {
+          "name": "pages/blog-info/blog-info",
+          "pathName": "pages/blog-info/blog-info",
+          "query": "gid=475",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/add-comment/add-comment",
+          "pathName": "pages/add-comment/add-comment",
+          "query": "gid=1216",
+          "scene": null
+        },
+        {
+          "name": "pages/search/search",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

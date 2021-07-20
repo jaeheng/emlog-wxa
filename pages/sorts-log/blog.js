@@ -45,7 +45,7 @@ Page({
     let sid = this.data.sid
     app.getSetting(setting => {
       console.log('setting', setting);
-      util.getArticle(page, sid, function (data) {
+      util.getArticle(page, sid, '', function (data) {
         that.setData({
           page: page,
           data: fromStart ? data : oldData.concat(data),

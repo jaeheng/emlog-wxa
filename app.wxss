@@ -6,6 +6,9 @@
   justify-content: space-between;
   box-sizing: border-box;
 } 
+.blog-view {
+  background-color: #fff;
+}
 a {
   color: #378CC2;
 }

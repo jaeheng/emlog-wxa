@@ -1,16 +1,1 @@
 /* blog.wxss */
-.blog-view {
-  background-color: #fff;
-}
-.slide-image {
-  width: 100%;
-}
-
-.logo {
-  margin: 0 30rpx;
-  text-align: center;
-  font-size: 24rpx;
-  padding: 10px 0;
-  border-bottom: 1px solid #d3d3d3;
-  position: relative;
-}
